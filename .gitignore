@@ -1,0 +1,12 @@
+*
+!.gitignore
+!alacritty
+!alacritty/**
+!awesome
+!awesome/**
+!mpd/
+!mpd/mpd.conf
+!ncmpcpp/
+!ncmpcpp/config
+!rofi/
+!rofi/**
