@@ -1,0 +1,101 @@
+configuration {
+	modi: "run,calc";
+	font: "Fira Sans 10";
+}
+
+* {
+	primary-brown-dark: #3c3025;
+	primary-brown: #584b39;
+	primary-brown-light: #72624a;
+	primary-foreground: #ededed;
+
+	secondary-orange-dark: #a54629;
+	secondary-orange-light: #d08670;
+
+	third-green: #699f49;
+
+	text-color: @primary-foreground;
+    background-color: @primary-brown-dark;
+}
+
+window {
+    background-color: @primary-brown-dark;
+    padding: 5px;
+	border-radius: 5px;
+	border: 2px;
+	border-color: @primary-foreground;
+}
+
+mainbox {
+    border: 0;
+    padding: 0;
+}
+
+message {
+    border: 1px 0 0;
+    border-color: @primary-foreground;
+	padding: 2px 1px;
+	//highlight: bold;
+}
+
+listview {
+    fixed-height: 0;
+    border: 1px 0 0;
+    border-color: @primary-foreground;
+    spacing: 0;
+    scrollbar: true;
+    padding: 2px 0 0;
+}
+
+element {
+    border: 0;
+    padding: 1px;
+}
+
+element.normal.normal {
+    background-color: @primary-brown;
+}
+
+element.selected.normal {
+    background-color: @secondary-orange-dark;
+}
+
+element.alternate.normal {
+    background-color: @primary-brown-dark;
+}
+
+scrollbar {
+    width: 4px ;
+    border: 0;
+    handle-width: 8px ;
+	background-color: @primary-brown;
+	handle-color: @secondary-orange-dark;
+    padding: 0;
+}
+
+inputbar {
+    spacing: 0;
+    padding: 1px ;
+}
+
+case-indicator {
+    spacing: 0;
+}
+
+entry {
+    spacing: 0;
+}
+
+prompt {
+    spacing: 0;
+}
+
+inputbar {
+    children:   [prompt, textbox-prompt-colon, entry, case-indicator];
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+    margin: 0px 0.3em 0em 0em;
+}
