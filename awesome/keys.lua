@@ -13,7 +13,7 @@ globalkeys = gears.table.join(
               {description = "view next", group = "tag"}),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
               {description = "go back", group = "tag"}),
-    awful.key({ modkey, "Shift"   }, "n", function() awful.tag.add("", { screen = awful.screen.focused() }) end,
+    awful.key({ modkey, "Shift"   }, "n", function() awful.tag.add("", { screen = awful.screen.focused(), layout = awful.layout.suit.tile }) end,
               {description = "add a tag", group = "tag"}),
     awful.key({ modkey, "Shift"   }, "d",
         function()

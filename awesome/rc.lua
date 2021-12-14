@@ -93,9 +93,8 @@ keyboard_widget = {
             align = "center",
             widget = awful.widget.keyboardlayout
         },
-        top = -6,
-        bottom = 10,
-        left = 7,
+        top = 9,
+        bottom = 9,
         layout = wibox.container.margin
     },
     bg = beautiful.secondary_color_d,
