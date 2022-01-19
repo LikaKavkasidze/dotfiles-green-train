@@ -55,6 +55,8 @@ helpers.auto_screen()
 awful.spawn.with_shell("mpd")
 -- Enable auto-screensaving
 awful.spawn.with_shell('xss-lock /usr/bin/sflock -- -f "-misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso8859-1" -c "WeAreInLimboThereIsNoFuture"')
+-- Redshift program
+awful.spawn.with_shell('redshift -l 48.8179:2.3658 -t 6000:4000 -g 0.8 -m randr')
 -- }}}
 
 -- {{{ Variable definitions
@@ -106,13 +108,18 @@ mpd_widget = lain.widget.mpd({
     notify = "off",
     settings = function()
         local text = mpd_now.artist.." - "..mpd_now.title
+        local vertical_text = ""
+
         if (mpd_now.state == "stop" or mpd_now.artist == "N/A") then
             text = "Nothing playing "
         end
 
         -- Line break at each char for vertical display
-        text = text:gsub(".", "%1\n"):sub(1, -2)
-        widget:set_markup(text)
+        for p, c in utf8.codes(text) do
+            vertical_text = vertical_text .. utf8.char(c) .. '\n'
+        end
+
+        widget:set_markup(vertical_text)
     end,
     widget = wibox.widget {
         align = "center",
