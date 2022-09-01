@@ -4,6 +4,7 @@ local naughty = require("naughty")
 local helpers = {}
 local layouts = {
     "fr",
+    "az",
     "ru"
 }
 local external_screen_enabled = false

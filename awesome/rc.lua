@@ -54,9 +54,9 @@ helpers.auto_screen()
 -- Spawn music daemon
 awful.spawn.with_shell("mpd")
 -- Enable auto-screensaving
-awful.spawn.with_shell('xss-lock /usr/bin/sflock -- -f "-misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso8859-1" -c "WeAreInLimboThereIsNoFuture"')
+awful.spawn.with_shell('xss-lock /usr/bin/sflock -- -f "-misc-fixed-medium-r-semicondensed--0-0-75-75-c-0-iso8859-1" -c "ThereIsNoFuture"')
 -- Redshift program
-awful.spawn.with_shell('redshift -l 48.8179:2.3658 -t 6000:4000 -g 0.8 -m randr')
+awful.spawn.with_shell('redshift -l 48.8179:2.3658 -t 5500:3000 -g 0.8 -m randr')
 -- }}}
 
 -- {{{ Variable definitions
