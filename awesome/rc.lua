@@ -48,7 +48,7 @@ end
 -- }}}
 
 -- {{{ Startup programs
-helpers.keyboard_layout(0)
+helpers.keyboard_layout("f")
 helpers.auto_screen()
 
 -- Spawn music daemon

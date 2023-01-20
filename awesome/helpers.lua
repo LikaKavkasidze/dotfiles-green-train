@@ -2,30 +2,24 @@ local awful = require("awful")
 local naughty = require("naughty")
 
 local helpers = {}
-local layouts = {
-    "fr",
-    "az",
-    "ru"
-}
 local external_screen_enabled = false
 
-current_layout = 1
+-- Change the current keyboard layout to a
+-- given one by its identifier.
+helpers.keyboard_layout = function(id)
+    layout = "fr"
 
--- Change the current keyboard layout by some increment
--- Please note that the value passed is AN INCREMENT
--- not the layout number to load.
-helpers.keyboard_layout = function(step)
-    current_layout = current_layout + step
-
-    if current_layout > #layouts then
-        current_layout = 1
-    else
-        if current_layout < 1 then
-            current_layout = #layouts
-        end
+    if id == "r" then
+        layout = "ru"
+    elseif id == "z" then
+        layout = "az"
+    elseif id == "a" then
+        layout = "ar"
+    elseif id == "g" then
+        layout = "ge"
     end
 
-    awful.spawn.with_shell("setxkbmap "..layouts[current_layout])
+    awful.spawn.with_shell("setxkbmap "..layout)
 end
 
 -- Volume control using PulseAudio

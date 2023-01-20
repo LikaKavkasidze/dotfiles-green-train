@@ -108,16 +108,31 @@ globalkeys = gears.table.join(
     {description = "run NCMPCPP", group = "launcher"}),
 
     -- Language layouts switch
-    awful.key({ modkey,           }, "space",
+    awful.key({ modkey, "Shift"   }, "a",
         function()
-            helpers.keyboard_layout(1)
+            helpers.keyboard_layout("a")
         end,
-    {description = "select next layout", group = "keyboard"}),
+        {description = "switch keyboard to Arabic", group = "keyboard"}),
+    awful.key({ modkey, "Shift"   }, "z",
+        function()
+            helpers.keyboard_layout("z")
+        end,
+        {description = "switch keyboard to Azerbaijani", group = "keyboard"}),
+    awful.key({ modkey, "Shift"   }, "r",
+        function()
+            helpers.keyboard_layout("r")
+        end,
+        {description = "switch keyboard to Russian", group = "keyboard"}),
+    awful.key({ modkey, "Shift"   }, "g",
+        function()
+            helpers.keyboard_layout("g")
+        end,
+        {description = "switch keyboard to Georgian", group = "keyboard"}),
     awful.key({ modkey, "Shift"   }, "space",
         function()
-            helpers.keyboard_layout(-1)
+            helpers.keyboard_layout("f")
         end,
-        {description = "select previous layout", group = "keyboard"}),
+        {description = "switch keyboard to French", group = "keyboard"}),
 
     -- Power function
     awful.key({ modkey, "Shift"   }, "p",
