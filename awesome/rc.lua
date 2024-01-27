@@ -283,6 +283,9 @@ awful.rules.rules = {
 
     -- Except these ones
     { rule = { class = "firefox" },
+      properties = { titlebars_enabled = false }},
+
+    { rule = { class = "Zim" },
       properties = { titlebars_enabled = false }}
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
