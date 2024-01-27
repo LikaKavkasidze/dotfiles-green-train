@@ -26,15 +26,15 @@ battery_text = lain.widget.bat({
             icon = ""
         end
 
-        if bat_now.status == "Discharging" then
-            if tonumber(bat_now.perc) <= 30 then
-                naughty.notify({
-                    preset = naughty.config.presets.normal,
-                    title  = "Batterie faible",
-                    text   = "Penser à brancher l'alimentation !",
-                })
-            end
-        end
+--        if bat_now.status == "Discharging" then
+--            if tonumber(bat_now.perc) <= 30 then
+--                naughty.notify({
+--                    preset = naughty.config.presets.normal,
+--                    title  = "Batterie faible",
+--                    text   = "Penser à brancher l'alimentation !",
+--                })
+--            end
+--        end
 
         battery_image.text = icon
 
