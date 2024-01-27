@@ -96,10 +96,10 @@ globalkeys = gears.table.join(
 
     awful.key({ modkey },   "c", function () awful.util.spawn("rofi -show calc -modi calc -no-sort")
     end,
-              {description = "run rofi calculator prompt", group = "awesome"}),
-    -- Menubar
-    awful.key({ modkey },   "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
+              {description = "run rofi calculator prompt", group = "launcher"}),
+
+    awful.key({ modkey },   "p", function() awful.util.spawn("rofi-pass") end,
+              {description = "run rofi pass prompt", group = "launcher"}),
 
     awful.key({ modkey },   "w",
         function()
@@ -123,6 +123,16 @@ globalkeys = gears.table.join(
             helpers.keyboard_layout("r")
         end,
         {description = "switch keyboard to Russian", group = "keyboard"}),
+    awful.key({ modkey, "Shift"   }, "t",
+        function()
+            helpers.keyboard_layout("t")
+        end,
+        {description = "switch keyboard to Turkish", group = "keyboard"}),
+    awful.key({ modkey, "Shift"   }, "o",
+        function()
+            helpers.keyboard_layout("o")
+        end,
+        {description = "switch keyboard to Romanian", group = "keyboard"}),
     awful.key({ modkey, "Shift"   }, "g",
         function()
             helpers.keyboard_layout("g")
@@ -135,13 +145,13 @@ globalkeys = gears.table.join(
         {description = "switch keyboard to French", group = "keyboard"}),
 
     -- Power function
-    awful.key({ modkey, "Shift"   }, "p",
+    awful.key({ modkey, "Control"   }, "p",
     function()
         awful.spawn.with_shell("shutdown now")
     end,
     {description = "turn off the computer", group = "power"}),
 
-    awful.key({ modkey, "Shift"   }, "s",
+    awful.key({ modkey, "Control"   }, "s",
     function()
         awful.spawn.with_shell("systemctl suspend")
     end,

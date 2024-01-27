@@ -13,13 +13,21 @@ helpers.keyboard_layout = function(id)
         layout = "ru"
     elseif id == "z" then
         layout = "az"
+    elseif id == "t" then
+        layout = "tr"
+    elseif id == "o" then
+        layout = "ro"
     elseif id == "a" then
         layout = "ar"
     elseif id == "g" then
         layout = "ge"
     end
 
-    awful.spawn.with_shell("setxkbmap "..layout)
+    if id == "o" then
+        awful.spawn.with_shell("setxkbmap -layout ro -variant std")
+    else
+        awful.spawn.with_shell("setxkbmap "..layout)
+    end
 end
 
 -- Volume control using PulseAudio
